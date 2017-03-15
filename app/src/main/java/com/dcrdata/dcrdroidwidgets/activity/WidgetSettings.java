@@ -1,4 +1,4 @@
-package com.jamieholdstock.dcrwidgets.activity;
+package com.dcrdata.dcrdroidwidgets.activity;
 
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
@@ -9,16 +9,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioButton;
 
-import com.jamieholdstock.dcrwidgets.R;
-import com.jamieholdstock.dcrwidgets.intents.MyIntents;
-import com.jamieholdstock.dcrwidgets.widget.DcrWidget;
-import com.jamieholdstock.dcrwidgets.widget.WidgetType;
+import com.dcrdata.dcrdroidwidgets.R;
+import com.dcrdata.dcrdroidwidgets.intents.MyIntents;
+import com.dcrdata.dcrdroidwidgets.widget.DcrWidget;
+import com.dcrdata.dcrdroidwidgets.widget.WidgetType;
 
-import static com.jamieholdstock.dcrwidgets.widget.WidgetType.*;
+import static com.dcrdata.dcrdroidwidgets.widget.WidgetType.*;
 
 public class WidgetSettings extends AppCompatActivity {
 
-    private static final String PREFS_NAME = "com.jamieholdstock.dcrwidgets.activity.WidgetSettings";
+    private static final String PREFS_NAME = "com.dcrdata.dcrdroidwidgets.activity.WidgetSettings";
     private static final String PREF_PREFIX_KEY = "widget_type";
 
     int mAppWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID;

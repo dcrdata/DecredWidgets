@@ -1,4 +1,4 @@
-package com.jamieholdstock.dcrwidgets;
+package com.dcrdata.dcrdroidwidgets;
 
 public class L {
     public static void l(String s) {

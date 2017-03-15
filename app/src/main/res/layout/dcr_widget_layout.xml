@@ -72,38 +72,38 @@
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:padding="6dp"
-                            android:background="@drawable/border"
-                            android:orientation="vertical"
                             android:layout_gravity="center"
-                            android:layout_marginLeft="6dp"
-                            android:layout_marginTop="2dp"
-                            android:layout_marginRight="6dp"
-                            android:layout_marginBottom="2dp"
                             android:layout_margin="3dp"
-                            android:minWidth="75dp">
+                            android:layout_marginBottom="2dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_marginRight="6dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@drawable/border"
+                            android:minWidth="75dp"
+                            android:orientation="vertical"
+                            android:padding="6dp">
 
                             <TextView
-                                style="@style/GreyShadowText"
                                 android:id="@+id/textView6"
-                                android:textSize="9sp"
-                                android:text="@string/dcr_btc_label"
-                                android:layout_height="wrap_content"
+                                style="@style/GreyShadowText"
                                 android:layout_width="wrap_content"
-                                android:textIsSelectable="false"
+                                android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:singleLine="true" />
+                                android:singleLine="true"
+                                android:text="@string/dcr_btc_label"
+                                android:textIsSelectable="false"
+                                android:textSize="9sp" />
 
                             <TextView
-                                style="@style/WhiteShadowText"
                                 android:id="@+id/text_btc_price"
-                                android:textSize="12sp"
-                                android:text="@string/dots"
-                                android:layout_height="wrap_content"
+                                style="@style/WhiteShadowText"
                                 android:layout_width="wrap_content"
-                                android:textIsSelectable="false"
-                                android:singleLine="true"
+                                android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:singleLine="true"
+                                android:text="@string/dots"
+                                android:textIsSelectable="false"
+                                android:textSize="12sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
 

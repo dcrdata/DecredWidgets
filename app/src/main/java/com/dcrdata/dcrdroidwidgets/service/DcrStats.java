@@ -1,9 +1,9 @@
-package com.jamieholdstock.dcrwidgets.service;
+package com.dcrdata.dcrdroidwidgets.service;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.jamieholdstock.dcrwidgets.L;
+import com.dcrdata.dcrdroidwidgets.L;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -11,7 +11,7 @@ import org.json.JSONObject;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
-public class DcrStats implements Parcelable {
+public class DcrData implements Parcelable {
 
     private JSONObject jsonObject;
     private final String rawJson;
@@ -26,7 +26,7 @@ public class DcrStats implements Parcelable {
     private Long networkhashps;
     private Long blocks;
 
-    public DcrStats(String rawJson) {
+    public DcrData(String rawJson) {
         this.rawJson = rawJson;
 
         usd_price = getDouble("usd_price");
@@ -124,17 +124,17 @@ public class DcrStats implements Parcelable {
         out.writeString(rawJson);
     }
 
-    public static final Parcelable.Creator<DcrStats> CREATOR = new Parcelable.Creator<DcrStats>() {
-        public DcrStats createFromParcel(Parcel in) {
-            return new DcrStats(in);
+    public static final Parcelable.Creator<DcrData> CREATOR = new Parcelable.Creator<DcrData>() {
+        public DcrData createFromParcel(Parcel in) {
+            return new DcrData(in);
         }
 
-        public DcrStats[] newArray(int size) {
-            return new DcrStats[size];
+        public DcrData[] newArray(int size) {
+            return new DcrData[size];
         }
     };
 
-    private DcrStats(Parcel in) {
+    private DcrData(Parcel in) {
         this(in.readString());
     }
 }

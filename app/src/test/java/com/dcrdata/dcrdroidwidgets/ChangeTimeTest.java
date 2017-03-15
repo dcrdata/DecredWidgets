@@ -1,6 +1,6 @@
-package com.jamieholdstock.dcrwidgets;
+package com.dcrdata.dcrdroidwidgets;
 
-import com.jamieholdstock.dcrwidgets.intenthandlers.ChangeTime;
+import com.dcrdata.dcrdroidwidgets.intenthandlers.ChangeTime;
 
 import org.junit.Assert;
 import org.junit.Test;

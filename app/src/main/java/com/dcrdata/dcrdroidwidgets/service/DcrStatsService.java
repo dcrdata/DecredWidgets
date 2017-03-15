@@ -1,4 +1,4 @@
-package com.jamieholdstock.dcrwidgets.service;
+package com.dcrdata.dcrdroidwidgets.service;
 
 import android.app.IntentService;
 import android.content.Intent;
@@ -10,20 +10,20 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.jamieholdstock.dcrwidgets.L;
-import com.jamieholdstock.dcrwidgets.intents.IntentExtras;
-import com.jamieholdstock.dcrwidgets.intents.MyIntents;
-import com.jamieholdstock.dcrwidgets.widget.DcrWidget;
+import com.dcrdata.dcrdroidwidgets.L;
+import com.dcrdata.dcrdroidwidgets.intents.IntentExtras;
+import com.dcrdata.dcrdroidwidgets.intents.MyIntents;
+import com.dcrdata.dcrdroidwidgets.widget.DcrWidget;
 
-public class DcrStatsService extends IntentService {
-    private final static DcrStatsUrl DCR_STATS_URL = new DcrStatsUrl("https://dcrstats.com");
-    //private final static DcrStatsUrl DCR_STATS_URL = new DcrStatsUrl("http://10.0.2.2:8090");
+public class DcrDataService extends IntentService {
+    private final static DcrDataUrl DCR_STATS_URL = new DcrDataUrl("https://dcrdata.org");
+    //private final static DcrDataUrl DCR_STATS_URL = new DcrDataUrl("http://10.0.2.2:8090");
 
     private final static int TIMEOUT_MS = 3000;
     private final static int MAX_RETRIES = 0;
 
-    public DcrStatsService() {
-        super("DcrStatsService");
+    public DcrDataService() {
+        super("DcrDataService");
     }
 
     @Override
@@ -41,7 +41,7 @@ public class DcrStatsService extends IntentService {
         this.getApplicationContext().sendBroadcast(i);
     }
 
-    public void sendStatsToWidget(DcrStats stats) {
+    public void sendStatsToWidget(DcrData stats) {
         Intent i = new Intent(this.getApplicationContext(), DcrWidget.class);
         i.setAction(MyIntents.DRAW_STATS);
         i.putExtra(IntentExtras.DCR_STATS, stats);
@@ -58,7 +58,7 @@ public class DcrStatsService extends IntentService {
                 @Override
                 public void onResponse(String response) {
                     L.l("Service received non-error response\n" + response);
-                    DcrStats stats = new DcrStats(response);
+                    DcrData stats = new DcrData(response);
                     sendStatsToWidget(stats);
                 }
             },

@@ -1,4 +1,4 @@
-package com.jamieholdstock.dcrwidgets.widget;
+package com.dcrdata.dcrdroidwidgets.widget;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -9,13 +9,13 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.RemoteViews;
 
-import com.jamieholdstock.dcrwidgets.R;
-import com.jamieholdstock.dcrwidgets.activity.WidgetSettings;
-import com.jamieholdstock.dcrwidgets.intenthandlers.ButtonPressedHandler;
-import com.jamieholdstock.dcrwidgets.intenthandlers.DrawErrorHandler;
-import com.jamieholdstock.dcrwidgets.intenthandlers.DrawStatsHandler;
-import com.jamieholdstock.dcrwidgets.intents.MyIntents;
-import com.jamieholdstock.dcrwidgets.service.DcrStatsService;
+import com.dcrdata.dcrdroidwidgets.R;
+import com.dcrdata.dcrdroidwidgets.activity.WidgetSettings;
+import com.dcrdata.dcrdroidwidgets.intenthandlers.ButtonPressedHandler;
+import com.dcrdata.dcrdroidwidgets.intenthandlers.DrawErrorHandler;
+import com.dcrdata.dcrdroidwidgets.intenthandlers.DrawStatsHandler;
+import com.dcrdata.dcrdroidwidgets.intents.MyIntents;
+import com.dcrdata.dcrdroidwidgets.service.DcrDataService;
 
 public class DcrWidget extends AppWidgetProvider {
 
@@ -105,7 +105,7 @@ public class DcrWidget extends AppWidgetProvider {
 
     private void sendIntentToService(Context context) {
         if (waitingForService) return;
-        Intent msgIntent = new Intent(context, DcrStatsService.class);
+        Intent msgIntent = new Intent(context, DcrDataService.class);
         msgIntent.setAction(MyIntents.GET_STATS);
         context.startService(msgIntent);
         waitingForService = true;

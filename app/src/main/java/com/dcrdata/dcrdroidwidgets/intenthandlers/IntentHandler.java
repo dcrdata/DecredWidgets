@@ -1,11 +1,11 @@
-package com.jamieholdstock.dcrwidgets.intenthandlers;
+package com.dcrdata.dcrdroidwidgets.intenthandlers;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import android.widget.RemoteViews;
 
-import com.jamieholdstock.dcrwidgets.R;
+import com.dcrdata.dcrdroidwidgets.R;
 
 abstract public class IntentHandler {
 

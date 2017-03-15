@@ -1,13 +1,13 @@
-package com.jamieholdstock.dcrwidgets.service;
+package com.dcrdata.dcrdroidwidgets.service;
 
 import java.util.Random;
 
-public class DcrStatsUrl {
+public class DcrDataUrl {
 
     private String baseUrl;
     private static final Random RANDOM = new Random();
 
-    public DcrStatsUrl(String baseUrl) {
+    public DcrDataUrl(String baseUrl) {
         this.baseUrl = baseUrl;
     }
 

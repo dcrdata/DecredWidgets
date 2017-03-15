@@ -1,13 +1,13 @@
-package com.jamieholdstock.dcrwidgets.intenthandlers;
+package com.dcrdata.dcrdroidwidgets.intenthandlers;
 
 import android.content.Context;
 import android.content.Intent;
 import android.widget.RemoteViews;
 
-import com.jamieholdstock.dcrwidgets.R;
-import com.jamieholdstock.dcrwidgets.intents.IntentExtras;
-import com.jamieholdstock.dcrwidgets.service.DcrStats;
-import com.jamieholdstock.dcrwidgets.widget.TimeStamp;
+import com.dcrdata.dcrdroidwidgets.R;
+import com.dcrdata.dcrdroidwidgets.intents.IntentExtras;
+import com.dcrdata.dcrdroidwidgets.service.DcrData;
+import com.dcrdata.dcrdroidwidgets.widget.TimeStamp;
 
 public class DrawStatsHandler extends IntentHandler {
 
@@ -17,7 +17,7 @@ public class DrawStatsHandler extends IntentHandler {
 
     @Override
     public void handle(Context context) {
-        DcrStats stats = (DcrStats) intent.getExtras().get(IntentExtras.DCR_STATS);
+        DcrData stats = (DcrData) intent.getExtras().get(IntentExtras.DCR_STATS);
 
         drawPriceStats(stats);
         drawStakeStats(stats);
@@ -27,12 +27,12 @@ public class DrawStatsHandler extends IntentHandler {
         showProgressBar(false);
     }
 
-    private void drawPriceStats(DcrStats stats) {
+    private void drawPriceStats(DcrData stats) {
         views.setTextViewText(R.id.text_usd_price, stats.getUsdPrice());
         views.setTextViewText(R.id.text_btc_price, stats.getBtcPrice());
     }
 
-    private void drawStakeStats(DcrStats stats) {
+    private void drawStakeStats(DcrData stats) {
         views.setTextViewText(R.id.text_ticket_price, stats.getTicketPrice());
 
         double ticketChange = stats.getPriceChangeInSeconds();
@@ -42,7 +42,7 @@ public class DrawStatsHandler extends IntentHandler {
         views.setTextViewText(R.id.text_est_new_price, stats.getEstNextPrice());
     }
 
-    private void drawWorkStats(DcrStats stats) {
+    private void drawWorkStats(DcrData stats) {
         views.setTextViewText(R.id.text_difficulty, stats.getDifficulty());
 
         double networkHash = stats.getNetworkHash();

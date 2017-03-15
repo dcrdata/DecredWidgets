@@ -1,6 +1,6 @@
-package com.jamieholdstock.dcrwidgets;
+package com.dcrdata.dcrdroidwidgets;
 
-import com.jamieholdstock.dcrwidgets.intenthandlers.HashRate;
+import com.dcrdata.dcrdroidwidgets.intenthandlers.HashRate;
 
 import org.junit.Assert;
 import org.junit.Test;

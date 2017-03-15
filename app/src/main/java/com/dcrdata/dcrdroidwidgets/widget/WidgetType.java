@@ -1,4 +1,4 @@
-package com.jamieholdstock.dcrwidgets.widget;
+package com.dcrdata.dcrdroidwidgets.widget;
 
 public enum WidgetType {
     ALL, PRICE, STAKE, WORK

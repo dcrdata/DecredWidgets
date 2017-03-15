@@ -1,4 +1,4 @@
-package com.jamieholdstock.dcrwidgets.widget;
+package com.dcrdata.dcrdroidwidgets.widget;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
